@@ -4,29 +4,42 @@ import java.util.List;
 
 public class GildedRose {
 
-	private static List<Item> items = null;
+	private List<Item> items = new ArrayList<Item>();
 
-	/**
+    public List<Item> getItems() {
+        return items;
+    }
+
+    /**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		
         System.out.println("OMGHAI!");
 		
-        items = new ArrayList<Item>();
-        items.add(new Item("+5 Dexterity Vest", 10, 20));
-        items.add(new Item("Aged Brie", 2, 0));
-        items.add(new Item("Elixir of the Mongoose", 5, 7));
-        items.add(new Item("Sulfuras, Hand of Ragnaros", 0, 80));
-        items.add(new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20));
-        items.add(new Item("Conjured Mana Cake", 3, 6));
+//        items = new ArrayList<Item>();
+//        items.add(new Item("+5 Dexterity Vest", 10, 20));
+//        items.add(new Item("Aged Brie", 2, 0));
+//        items.add(new Item("Elixir of the Mongoose", 5, 7));
+//        items.add(new Item("Sulfuras, Hand of Ragnaros", 0, 80));
+//        items.add(new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20));
+//        items.add(new Item("Conjured Mana Cake", 3, 6));
+//
+//        updateQuality();
+    }
 
-        updateQuality();
-}
 
+    public GildedRose(){
+	    //items = new ArrayList<Item>();
+
+    }
+
+    public void add(Item item){
+	    items.add(item);
+    }
 
 	
-    public static void updateQuality()
+    public void updateQuality()
     {
         for (int i = 0; i < items.size(); i++)
         {
@@ -62,6 +75,11 @@ public class GildedRose {
                             {
                                 items.get(i).setQuality(items.get(i).getQuality() + 1);
                             }
+                        }
+
+                        // Backstage pass gets no value after the event
+                        if(items.get(i).getSellIn() < 1){
+
                         }
                     }
                 }
