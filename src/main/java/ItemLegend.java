@@ -4,6 +4,6 @@ public class ItemLegend extends Item {
     }
 
     public void updateQuality(){
-        quality = 80;
+        // quality = 80;
     }
 }

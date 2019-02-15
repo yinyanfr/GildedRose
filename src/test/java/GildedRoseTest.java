@@ -32,7 +32,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void testBadQuality(){
+    public void testEdgyQuality(){
         GildedRose rose = new GildedRose();
         rose.add(new Item("+5 Dexterity Vest", 10, 0));
         rose.updateQuality();
@@ -89,6 +89,22 @@ public class GildedRoseTest {
         assertEquals(23, rose.getItems().get(2).getQuality());
         assertEquals(0, rose.getItems().get(3).getQuality());
         System.out.println("√ \"Backstage passes\", like aged brie, increases in Quality as it's SellIn value approaches; Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but Quality drops to 0 after the concert");
+    }
+
+    @Test
+    public void testConjured(){
+        GildedRose rose = new GildedRose();
+        // Normal
+        rose.add(new ItemConjured("Conjured Mana Cake", 3, 6));
+        // Expiration
+        rose.add(new ItemConjured("Very Bad Conjured Mana Cake", 0, 6));
+        // Edgy
+        rose.add(new ItemConjured("Dead Conjured Mana Cake", 3, 1));
+        rose.updateQuality();
+        assertEquals(4, rose.getItems().get(0).getQuality());
+        assertEquals(2, rose.getItems().get(1).getQuality());
+        assertEquals(0, rose.getItems().get(2).getQuality());
+        System.out.println("√ \"Conjured\" items degrade in Quality twice as fast as normal items");
     }
 
 
