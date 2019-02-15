@@ -97,9 +97,9 @@ public class GildedRoseTest {
         // Normal
         rose.add(new ItemConjured("Conjured Mana Cake", 3, 6));
         // Expiration
-        rose.add(new ItemConjured("Very Bad Conjured Mana Cake", 0, 6));
+        rose.add(new ItemConjured("Badly Conjured Mana Cake", 0, 6));
         // Edgy
-        rose.add(new ItemConjured("Dead Conjured Mana Cake", 3, 1));
+        rose.add(new ItemConjured("Deadly Conjured Mana Cake", 3, 1));
         rose.updateQuality();
         assertEquals(4, rose.getItems().get(0).getQuality());
         assertEquals(2, rose.getItems().get(1).getQuality());
