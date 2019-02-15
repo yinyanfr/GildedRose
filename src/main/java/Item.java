@@ -29,4 +29,10 @@ public class Item {
 	public void setQuality(int quality) {
 		this.quality = quality;
 	}
+
+	public void updateQuality() {
+		quality--;
+		if(sellIn <= 0) quality--;
+		if(quality < 0) quality = 0;
+	}
 }

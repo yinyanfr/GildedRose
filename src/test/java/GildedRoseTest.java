@@ -52,7 +52,7 @@ public class GildedRoseTest {
     @Test
     public void testAged(){
         GildedRose rose = new GildedRose();
-        rose.add(new Item("Aged Brie", 2, 0));
+        rose.add(new ItemAged("Aged Brie", 2, 0));
         rose.updateQuality();
         assertEquals(1, rose.getItems().get(0).getQuality());
         System.out.println("√ \"Aged Brie\" actually increases in Quality the older it gets");
@@ -61,7 +61,7 @@ public class GildedRoseTest {
     @Test
     public void testSuper(){
         GildedRose rose = new GildedRose();
-        rose.add(new Item("Aged Brie", 2, 50));
+        rose.add(new ItemAged("Aged Brie", 2, 50));
         rose.updateQuality();
         assertEquals(50, rose.getItems().get(0).getQuality());
         System.out.println("√ The Quality of an item is never more than 50");
@@ -70,7 +70,7 @@ public class GildedRoseTest {
     @Test
     public void testLegend(){
         GildedRose rose = new GildedRose();
-        rose.add(new Item("Sulfuras, Hand of Ragnaros", 0, 80));
+        rose.add(new ItemLegend("Sulfuras, Hand of Ragnaros", 0, 80));
         rose.updateQuality();
         assertEquals(80, rose.getItems().get(0).getQuality());
         System.out.println("√ \"Sulfuras\", being a legendary item, never has to be sold or decreases in Quality");
@@ -79,10 +79,10 @@ public class GildedRoseTest {
     @Test
     public void testPass(){
         GildedRose rose = new GildedRose();
-        rose.add(new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20));
-        rose.add(new Item("Backstage passes to a TAFKAL80ETC concert", 10, 20));
-        rose.add(new Item("Backstage passes to a TAFKAL80ETC concert", 5, 20));
-        rose.add(new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20));
+        rose.add(new ItemTicket("Backstage passes to a TAFKAL80ETC concert", 15, 20));
+        rose.add(new ItemTicket("Backstage passes to a TAFKAL80ETC concert", 10, 20));
+        rose.add(new ItemTicket("Backstage passes to a TAFKAL80ETC concert", 5, 20));
+        rose.add(new ItemTicket("Backstage passes to a TAFKAL80ETC concert", 0, 20));
         rose.updateQuality();
         assertEquals(21, rose.getItems().get(0).getQuality());
         assertEquals(22, rose.getItems().get(1).getQuality());

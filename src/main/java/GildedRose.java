@@ -41,6 +41,10 @@ public class GildedRose {
 	
     public void updateQuality()
     {
+        for (int i = 0; i < items.size(); i++){
+            items.get(i).updateQuality();
+        }
+        /*
         for (int i = 0; i < items.size(); i++)
         {
             if ((!"Aged Brie".equals(items.get(i).getName())) && !"Backstage passes to a TAFKAL80ETC concert".equals(items.get(i).getName())) 
@@ -118,6 +122,8 @@ public class GildedRose {
                 }
             }
         }
+        */
     }
+
 
 }
